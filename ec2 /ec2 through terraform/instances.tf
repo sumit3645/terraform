@@ -4,7 +4,7 @@ resource "aws_key_pair" "key_tf" {
   public_key = file("${path.module}/id_rsa")
 }
 
-
+#create a secutity_group 
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic and all outbound traffic"
@@ -23,7 +23,7 @@ resource "aws_security_group" "allow_tls" {
 
 
 
-
+#create instances and attach ssh-key and sg to instances
 resource "aws_instance" "app-server" {
   ami           = "ami-02521d90e7410d9f0"
   instance_type = "t2.micro"
