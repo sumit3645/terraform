@@ -1,7 +1,7 @@
 #creating ssh-key for instances
 resource "aws_key_pair" "key_tf" {
   key_name   = "sumit-key"
-  public_key = file("${path.module}/id_rsa")
+  public_key = file("${path.module}/id_rsa.pub")
 }
 
 #create a secutity_group 
